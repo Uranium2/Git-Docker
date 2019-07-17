@@ -1,6 +1,23 @@
 version: '3'
 
 services :
+  mongodb :
+    container_name: MONGO
+    image : mongo:latest
+    volumes:
+        - ./data:/data/import
+    ports :
+       - "27017:27017"
+  neo4j:
+    container_name: NEO4J
+    image: neo4j:latest
+    environment:
+       - "NEO4J_AUTH:root/root"
+    cap_add:
+       - SYS_RESOURCE
+    ports:
+       - "7474:7474"
+       - "7687:7687"
   flask:
     build : .
     volumes : 
