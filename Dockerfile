@@ -6,4 +6,6 @@ ADD ./requirements.txt /app/requirements.txt
 
 RUN pip install -r requirements.txt
 
-CMD ["python"]
+ADD . /app
+
+CMD ["python", "-u", "flask/app.py"]
