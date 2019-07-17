@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Search Result</title>
+
+    <!-- CSS  -->
+    <link href="{{ url_for('static', filename='css/materialize.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">IMDB Search</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            </ul>
+        </div>
+    </nav>
+
+    <!--Partie resultat-->
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card blue lighten-1">
+                <div class="card-content white-text">
+                    <span class="card-title "><b><u>Results</u></b></span>
+                    <table class="centered">
+                        <thread>
+                            <tr>
+                                <th class="center">Movie Name</th>
+                            </tr>
+                        </thread>
+                        <tbody id="tbodyResults">
+
+                            {% for model in data["movies"] %}
+                            <tr>
+
+                                <td>{{ model }}</td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Scripts-->
+    <script src="{{ url_for('static', filename='js/materialize.min.js') }}"> </script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</body>
+
+</html>
