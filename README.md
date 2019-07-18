@@ -29,9 +29,9 @@ You have to change the variable `passwordNeo` to you new password.
 
 ## Init database
 
-   py install -r requirements.txt
-   cd app
-   py main.py
+    py install -r requirements.txt
+    cd app
+    py main.py
    
 ## Connect to web site
 
