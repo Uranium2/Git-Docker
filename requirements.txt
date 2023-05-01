@@ -1,4 +1,4 @@
-flask==1.0
+flask==2.3.2
 pymongo==2.7.2
 Flask-Material==0.1.1
 neo4j-driver==1.7.4
